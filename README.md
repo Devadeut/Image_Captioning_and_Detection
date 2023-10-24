@@ -1,8 +1,7 @@
-# Software Lab 
 
-## Python Datascience Assignment
+## Image Captioning
 
-In this assignment we will deal with **Image Captioning**. Image Captioning is the process of generating textual description of an image. You have to create a python package for transforming images and analysing their effect on the captions of an image captioning model. We are providing you with a pretrained captioning model, all you need to do is to call the model on the image and get the outputs.
+ Image Captioning is the process of generating textual description of an image. You have to create a python package for transforming images and analysing their effect on the captions of an image captioning model. We are providing you with a pretrained captioning model, all you need to do is to call the model on the image and get the outputs.
 
 A python package means that one can install the package in the python environment and can import the modules in any python script, irrespective of the location of the script. Creating a python package is fairly easy, just follow the steps [here](https://packaging.python.org/tutorials/packaging-projects/).
 
@@ -88,38 +87,4 @@ e) `blur.py`: This file takes an image as input and applies a gaussian blur to i
 
 6. `setup.py`: Use this file for constructing the package `my_package`.
 
-## Coding Task [30 marks]
 
-Note: For handling images, e.g. reading images, etc. we would recommend using PIL instead of OpenCV as OpenCV uses `BGR` format instead of `RGB`.
-
-1. Write the various transformations in `./my_package/data/transforms`. There are five files, as already mentioned. Although these functions are easily implementable using any image processing libraries like PIL, skimage or opencv. [2x5=10 marks]
-
-2. Complete the `Dataset` class in `./my_package/data/dataset.py`. This class will accept the path to the annotation file and the list of transformation classes. Ideally you should be directly using transformation classes but you may also use strings to identify the transformations. [5 marks]
-
-3. Complete the `Download` class in `./my_package/data/download.py` that will download the image from the url supplied and consequently store the image  at the correct path and filename should be same as in the annotaion file (`./data/annotations.jsonl`).[5 marks]
-
-4. Create a python package ``` my_package```. For this you need to write ``` setup.py```. It must be noted that files called ```___init__.py``` need to be added in the hierarchy. We leave it to you to search where they should be added. Note that the user will generally not know the exact files where the classes are written. That means, he/she does not know that their exist a file ```crop.py``` where the class ```CropImage()``` is defined. Rather he/she simply knows that this class is defined in ```transforms```. So, a good coding practice is to allow an import statement ```from my_package.data.transforms import CropImage```. [5 marks]
-
-5. Write ```main.py``` where you will test the different transformations you have written on the instance segmentor. The outputs for each of the experiments should be organized properly in the outputs folder. [5 marks]
-
-## Analysis Task [10 marks]
-
-1. Obtain and display the captions for all the images (which you dowmload) in the `data/imgs` folder. [3 marks]
-
-2. Consider the image with name same as the last digit of your roll number, i.e. if your roll number is 20CS####7 then consider the image `7.jpg` then save the transformed images while printing the captions in console: [1x7=7 marks]
-
-	a) The original image along with the 3 generated captions.
-
-	b) Horizontally flipped original image along with the 3 generated captions.
-
-	c) Blurred image (with some degree of blurring) along with the 3 generated captions.
-
-	d) Twice Rescaled image (2X scaled) along with the 3 generated captions.
-
-	e) Half Rescaled image (0.5X scaled) along with the 3 generated captions.
-
-	f) 90 degree right rotated image along with the 3 generated captions.
-
-	g) 45 degree left rotated image along with the 3 generated captions.
-
-**Please read the class definitions very carefully. In this assignment you do not need to code a lot, but you need to understand how to integrate several custom modules together in a clean way. More details on the arguments and the return types are provided in the corresponding files.**
