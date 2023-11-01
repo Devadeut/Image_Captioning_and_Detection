@@ -1,4 +1,4 @@
-
+Image Captioning project during Semester 
 ## Image Captioning
 
  Image Captioning is the process of generating textual description of an image. You have to create a python package for transforming images and analysing their effect on the captions of an image captioning model. We are providing you with a pretrained captioning model, all you need to do is to call the model on the image and get the outputs.
